@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.css";
-import Button from "./components/Button";
-import Card from "./components/Card";
 
 function App() {
   return (
     <>
-      <div className="App"></div>;
+      <div className="App">
+        <h1>Hola React</h1>
+      </div>
     </>
   );
 }
