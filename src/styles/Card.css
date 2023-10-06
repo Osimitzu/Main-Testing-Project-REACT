@@ -1,0 +1,15 @@
+.card {
+  width: 350px;
+  border: 3px solid coral;
+  border-radius: 10%;
+  text-align: center;
+  margin: 30px;
+}
+
+span {
+  color: coral;
+}
+
+h2 {
+  color: rgb(255, 200, 80);
+}
