@@ -3,11 +3,9 @@ import "./App.css";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <h1>Hola React</h1>
-      </div>
-    </>
+    <div className="App">
+      <h1>Hola React</h1>
+    </div>
   );
 }
 
