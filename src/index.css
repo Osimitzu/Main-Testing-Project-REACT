@@ -1,4 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #333;
-  color: whitesmoke;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.user-card {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  width: fit-content;
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+}
+
+.user-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.user-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-card ul li {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.user-card ul li i {
+  margin-right: 10px;
+}
+
+button {
+  background: darkblue;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
 }
