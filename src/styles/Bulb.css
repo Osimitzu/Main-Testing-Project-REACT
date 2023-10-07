@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 350px;
+  height: 350px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.bulb {
+  width: 220px;
+  height: 220px;
+  background-color: whitesmoke;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+button {
+  width: 120px;
+  height: 50px;
+  margin: auto;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  background-color: #dd3939;
+  opacity: 0.8;
+  box-shadow: 2px 2px 15px 3px rgb(167, 76, 76);
+}
