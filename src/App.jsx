@@ -3,53 +3,65 @@ import "./App.css";
 import { Title } from "./components/Title";
 
 function App() {
-  // console.log("Hola mundo");
-  const [value, setValue] = useState("");
+  const colors = [
+    "#FFB6C1", // Rosa pastel
+    "#87CEEB", // Azul cielo pastel
+    "#98FB98", // Verde menta pastel
+    "#FFD700", // Amarillo pastel
+    "#FFA07A", // Melocotón pastel
+    "#9370DB", // Lavanda pastel
+    "#FFC0CB", // Rosa claro pastel
+    "#20B2AA", // Verde azulado pastel
+    "#FFDAB9", // Melocotón claro pastel
+    "#B0E0E6", // Azul celeste pastel
+  ];
+  const [num, setNum] = useState(0);
   const [show, setShow] = useState(false);
-  const [num, setNum] = useState(100);
+  const [color, setColor] = useState(0);
+
+  const decrement = () => {
+    setNum(num - 1);
+  };
+
+  const increment = () => {
+    setNum(num + 1);
+  };
 
   const showHide = () => {
     setShow(!show);
+
+    setColor(changeColor);
   };
 
-  const lessFive = () => {
-    setNum(num - 5);
-    if (num === 0) {
-      setNum(100);
-    }
+  const changeColor = () => {
+    let newColor;
+
+    do {
+      newColor = Math.floor(Math.random() * 10);
+    } while (newColor === color);
+
+    setColor(newColor);
   };
-
-  // Sintaxis basica para useEffect()
-  // useEffect(() => {
-  //   // Efectos
-  //   // Codigo que vamos a repetir en distintas partes del ciclo de vida del componente
-  // }, []);
-
-  // Si el useEffect no recibe un arreglo de dependencias, entonces cualquier cambio en propiedades o el estado, detonara el efecto. El useEffect no estaría controlado.
-
-  // Cuando se agregan dependencias al arreglo de dependencias, el efecto se va a detonar.
-  // 1.- Al inicio, cuando el componente carga.
-  // 2.- Cuando alguna dependencia sufre cambios.
-
-  useEffect(() => {
-    console.log("Ocurrio una modificación");
-  }, [value, show, num]);
 
   return (
-    <div className="App">
-      <Title titleText={value} />
-      <label htmlFor="password">Contraseña</label>
-      <input
-        id="password"
-        type={show ? "text" : "password"}
-        onChange={(e) => setValue(e.target.value)}
-      />
-      <button onClick={showHide}>
-        <i className="bx bxs-low-vision"></i>
-      </button>
-
-      <h1>{num}</h1>
-      <button onClick={lessFive}>Restar 5</button>
+    <div className="App" style={{ backgroundColor: colors[color] }}>
+      <h1>Contador</h1>
+      <div className="container1">
+        <h2>{num}</h2>
+        <button onClick={decrement}>Decrement</button>
+        <button onClick={increment}>Increment</button>
+      </div>
+      <h1>Password Input</h1>
+      <div className="container2">
+        <input
+          id="password"
+          type={show ? "text" : "password"}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <button onClick={showHide}>
+          <i className="bx bxs-low-vision"></i>
+        </button>
+      </div>
     </div>
   );
 }
