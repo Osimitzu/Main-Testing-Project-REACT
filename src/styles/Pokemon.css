@@ -1,0 +1,53 @@
+.pokeContainer {
+  width: 400px;
+  background-color: rgb(205, 203, 203);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: black;
+  box-shadow: 1px 1px 8px 5px rgba(244, 241, 241, 0.5);
+  text-align: center;
+  gap: 20px;
+  font-family: monospace;
+}
+.pokeName {
+  color: coral;
+}
+
+.pokeImage {
+  width: 280px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.pokeButton {
+  width: 100px;
+  padding: 5px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-color: gray;
+  opacity: 0.8;
+  transition: all 0.2s;
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 8px 5px rgba(133, 133, 133, 0.5);
+}
+
+.pokeButton:hover {
+  opacity: 1;
+  color: rgb(255, 161, 126);
+}
+
+.pokeButton:active {
+  transform: scale(0.93);
+}
+
+span {
+  color: coral;
+}
