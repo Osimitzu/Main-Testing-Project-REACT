@@ -1,0 +1,29 @@
+.container {
+  background-color: rgba(245, 245, 245, 0.297);
+  color: black;
+  width: 450px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 20px 8px rgba(206, 205, 205, 0.3);
+}
+
+.countryName {
+  margin-top: 20px;
+}
+
+img {
+  width: 300px;
+}
+
+span {
+  color: coral;
+}
+
+.capital {
+  margin-bottom: 20px;
+}
