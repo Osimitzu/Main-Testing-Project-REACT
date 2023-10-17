@@ -6,3 +6,20 @@
   align-items: center;
   flex-direction: column;
 }
+
+.container {
+  width: 400px;
+  background-color: rgba(245, 245, 245, 0.516);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  margin: 30px;
+  text-align: center;
+}
+
+img {
+  width: 350px;
+}
