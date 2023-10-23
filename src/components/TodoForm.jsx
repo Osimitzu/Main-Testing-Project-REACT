@@ -14,8 +14,16 @@ const TodoForm = () => {
       completed: isCompleted,
     };
     console.log(data);
-    e.preventDefault();
+    e.preventDefault(); // Para evitar que se vuelva a renderizar todo el componente
+    reset();
+    alert("Se envio la tarea :D");
     console.log("Se envio la tarea");
+  };
+
+  const reset = () => {
+    setTitle("");
+    setText("");
+    setIsCompleted(false);
   };
 
   return (
