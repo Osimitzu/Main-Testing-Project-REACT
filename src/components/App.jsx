@@ -4,7 +4,7 @@ import "../styles/App.css";
 function App() {
   return (
     <div className="App">
-      <h1>Hola React</h1>
+      <h1>Clase 15</h1>
     </div>
   );
 }
