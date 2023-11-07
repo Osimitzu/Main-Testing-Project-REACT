@@ -1,0 +1,14 @@
+li {
+  list-style: none;
+  border: 1px solid black;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+li > h4 {
+  font-weight: 400;
+}
+
+li > span {
+  font-weight: bold;
+}
