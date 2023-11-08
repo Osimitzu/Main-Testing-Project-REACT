@@ -1,6 +1,6 @@
 import "../styles/UsersList.css";
 
-const UsersList = ({ usersData, deleteHandler }) => {
+const UsersList = ({ usersData, deleteHandler, selectUser }) => {
   return (
     <ul>
       {usersData?.map((user) => (
@@ -18,6 +18,7 @@ const UsersList = ({ usersData, deleteHandler }) => {
             {user.birthday}
           </h4>
           <button onClick={() => deleteHandler(user.id)}>Eliminar</button>
+          <button onClick={() => selectUser(user)}>Editar</button>
         </li>
       ))}
     </ul>

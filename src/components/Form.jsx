@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
 
-const Form = ({ createUser }) => {
+const Form = ({ createUser, selectedUser, updateUser }) => {
   //useForm -> Custom Hook
   //Lo ejecutamos. Retorna un objeto. Vamos a desestructurar dos propiedades muy importantes: register y handleSubmit.
   const {
@@ -10,30 +11,37 @@ const Form = ({ createUser }) => {
     reset,
   } = useForm();
 
-  const submit = (data) => {
-    data.id = Date.now();
-    //Sacar el objeto data
-    createUser(data);
+  useEffect(() => {
+    // Determinar si hay un usuario seleccionado
+    if (selectedUser) {
+      // si lo hay se carga su info
+      reset(selectedUser);
+    } else {
+      // si no lo hay, el formulario estara vacio
+      emptyForm();
+    }
+  }, [selectedUser]);
 
-    //Si el envio de informacion ocurre con exito
-    //Limpio el formulario
-    emptyForm();
+  const submit = (data) => {
+    if (selectedUser) {
+      // Si hay un usuario seleccionado hay que editar.
+      // alert("Se edito");
+      updateUser(data);
+    } else {
+      // Si no hay un usuario seleccionado hay que crear uno nuevo
+      data.id = Date.now();
+      //Sacar el objeto data
+      createUser(data);
+
+      //Si el envio de informacion ocurre con exito
+      //Limpio el formulario
+      emptyForm();
+    }
   };
 
   //reset
   //Lo que hace es recibir un objeto que como propiedades va a tener los nombres de los diferentes inputs del formulario
   //Los valores que tengan  las propiedades de este objeto se setearan como valores del input
-
-  //Valores por default
-  const fillForm = () => {
-    reset({
-      email: "john@gmail.com",
-      password: "john1234",
-      first_name: "John",
-      last_name: "Doe",
-      birthday: "1993-10-10",
-    });
-  };
 
   //Limpieza del formulario
   const emptyForm = () => {
@@ -96,7 +104,7 @@ const Form = ({ createUser }) => {
           />
         </div>
 
-        <button type="submit">Completar registro</button>
+        <button type="submit">Completar Registro</button>
       </form>
     </div>
   );

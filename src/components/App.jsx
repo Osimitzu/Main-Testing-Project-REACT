@@ -20,6 +20,8 @@ function App() {
     },
   ]);
 
+  const [userUpdate, setUserUpdate] = useState(null);
+
   // Create (añadimos un nuevo usuario)
   const addUser = (userData) => {
     // Mutabilidad // Inmutabilidad
@@ -41,12 +43,36 @@ function App() {
     setUsers(filteredUsers);
   };
 
+  const selectUser = (userData) => {
+    // console.log(userData);
+    setUserUpdate(userData);
+  };
+
+  const userActualization = (userData) => {
+    // Encontrar dentro del arreglo del estado el objeto(usuario) que va a ser actualizado
+    const index = users.findIndex((user) => user.id === userData.id);
+    // Remplazar el objeto actual por el objeto userData
+    users[index] = userData;
+    // Seteamos el estado
+    setUsers([...users]);
+    // Vaciar el formulario
+    setUserUpdate(null);
+  };
+
   return (
     <div className="App">
-      <h1>Clase 16</h1>
+      <h1>Clase 17</h1>
       {/* <Todo /> */}
-      <Form createUser={(data) => addUser(data)} />
-      <UsersList usersData={users} deleteHandler={(id) => deleteUser(id)} />
+      <Form
+        createUser={(data) => addUser(data)}
+        selectedUser={userUpdate}
+        updateUser={(data) => userActualization(data)}
+      />
+      <UsersList
+        usersData={users}
+        deleteHandler={(id) => deleteUser(id)}
+        selectUser={(data) => selectUser(data)}
+      />
     </div>
   );
 }
